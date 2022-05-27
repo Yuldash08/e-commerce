@@ -29,7 +29,7 @@ const Navbar = () => {
                             <MenuIcon onClick={handleOpenNavMenu} />
                         </IconButton>
                         <List anchorElNav={anchorElNav} handleCloseNavMenu={handleCloseNavMenu} />
-                        <Box>
+                        <Box sx={{display: {xs: 'none', md: 'block'}}}>
                             {
                                 list.map(item => {
                                     return (
