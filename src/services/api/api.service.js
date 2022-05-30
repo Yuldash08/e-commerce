@@ -13,5 +13,17 @@ const query = {
             console.log(error);
             return error
         }    
+    },
+
+    getAllCategories: async () => {
+        try{
+            let result = await api.get('/categories')
+            return result
+        } catch(error) {
+            console.log(error);
+            return error
+        }
     }
 }
+
+export default query
