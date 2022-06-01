@@ -22,7 +22,7 @@ const CategoriesProvider = ({ children }) => {
     useEffect(() => {
         setCategories({ isLoading: true, isError: false, categories: [] })
         query.getAllCategories()
-            .then(result => setCategories({ isLoading: false, isError: false, categories: result.data }))
+            .then(result => setCategories({ isLoading: false, isError: false, categories: ['all', ...result.data] }))
             .catch((err) => setCategories({ isLoading: false, isError: true, categories: [] }))
     }, [])
 
@@ -32,3 +32,5 @@ const CategoriesProvider = ({ children }) => {
         </CategoriesContext.Provider>
     )
 }
+
+export default CategoriesProvider;
