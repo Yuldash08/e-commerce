@@ -26,6 +26,7 @@ const ProductsByCategoryProvider = ({ children }) => {
     }
 
     useEffect(() => {
+        setProducts({ isLoading: true, isError: false, products: [] })
         query.getProductsByCategory(category)
             .then(result => setProducts({ isLoading: false, isError: false, products: result.data }))
             .catch(err => setProducts({ isLoading: false, isError: true, products: [] }))
