@@ -36,8 +36,7 @@ export const Products = () => {
                 </>
             )}
 
-            {
-                allProducts.products.length && allProducts.products.map(product => (
+            {allProducts.products.map(product => (
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <ProductCard product={product} />
                     </Grid>
@@ -65,7 +64,7 @@ export const Products = () => {
         )}
 
         {
-            products.products.length && products.products.map(product => (
+            products.products.map(product => (
                 <Grid item xs={12} sm={6} md={4} lg={3}>
                     <ProductCard product={product} />
                 </Grid>

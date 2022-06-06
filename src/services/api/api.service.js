@@ -34,6 +34,17 @@ const query = {
             console.log(error);
             return error
         }
+    },
+
+    getProductsById: async (id) => {
+        try{
+            let result = await api.get('/products/' + id)
+            return result
+        }
+        catch(error){
+            console.log(error)
+            return error
+        }
     }
 }
 
