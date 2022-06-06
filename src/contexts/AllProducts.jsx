@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import query from '../services/api/api.service'
 
 const AllProductsContext = createContext({isLoading: false, isError: false, products: []})
@@ -23,7 +23,7 @@ const AllProductsProvider = ({ children }) => {
         <AllProductsContext.Provider value={allProducts}>
             {children}
         </AllProductsContext.Provider>
-    )
+    ) 
 }
-
 export default AllProductsProvider
+
