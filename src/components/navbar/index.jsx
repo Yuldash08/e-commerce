@@ -1,9 +1,10 @@
-import { AppBar, Box, Button, IconButton, Toolbar, Typography, Container } from '@mui/material'; 
+import { AppBar, Box, Button, IconButton, Toolbar, Typography, Container } from '@mui/material';
 import React, { useState } from 'react'
 import { List } from './List';
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from 'react-router-dom';
 import { list } from './listarray';
+import { HomeOutlined, ShoppingCart } from '@mui/icons-material';
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = useState(null)
@@ -28,16 +29,13 @@ const Navbar = () => {
                             <MenuIcon onClick={handleOpenNavMenu} />
                         </IconButton>
                         <List anchorElNav={anchorElNav} handleCloseNavMenu={handleCloseNavMenu} />
-                        <Box sx={{display: {xs: 'none', md: 'block'}}}>
-                            {
-                                list.map(item => {
-                                    return (
-                                        <Button component={Link} to={item.path} startIcon={<item.icon/>} variant='text' color='inherit'>
-                                            {item.title}
-                                        </Button>
-                                    )
-                                })
-                            }
+                        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                            <Button component={Link} to={'/'} startIcon={<HomeOutlined />} variant='text' color='inherit'>
+                                Home
+                            </Button>
+                            <Button  startIcon={<ShoppingCart />} variant='text' color='inherit'>
+                                Cart
+                            </Button>
                         </Box>
                     </Box>
                 </Toolbar>
