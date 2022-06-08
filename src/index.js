@@ -8,6 +8,7 @@ import AllProductsProvider from './contexts/AllProducts';
 import CategoriesProvider from './contexts/Categories';
 import ProductsByCategoryProvider from './contexts/ProductsByCategory';
 import ProductProvider from './contexts/Product';
+import CartProvider from './contexts/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +18,9 @@ root.render(
         <CategoriesProvider>
           <ProductsByCategoryProvider>
             <ProductProvider>
-              <Routers />
+              <CartProvider>
+                <Routers />
+              </CartProvider>
             </ProductProvider>
           </ProductsByCategoryProvider>
         </CategoriesProvider>
