@@ -5,9 +5,11 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from 'react-router-dom';
 import { list } from './listarray';
 import { HomeOutlined, ShoppingCart } from '@mui/icons-material';
+import { useDrawer } from '../../contexts/Drawer';
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = useState(null)
+    const { openDrawer } = useDrawer()
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget)
@@ -33,7 +35,7 @@ const Navbar = () => {
                             <Button component={Link} to={'/'} startIcon={<HomeOutlined />} variant='text' color='inherit'>
                                 Home
                             </Button>
-                            <Button  startIcon={<ShoppingCart />} variant='text' color='inherit'>
+                            <Button onClick={openDrawer}  startIcon={<ShoppingCart />} variant='text' color='inherit'>
                                 Cart
                             </Button>
                         </Box>

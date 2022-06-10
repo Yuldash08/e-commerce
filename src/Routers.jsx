@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
+import { CartDrawer } from "./components/CartDrawer";
 import { MainLayout } from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import { Product } from "./pages/HomePage/Product";
@@ -17,6 +18,7 @@ const Routers = () => {
           <Route path='/product/:id' element={<Product/>}/>
         </Route>
       </Routes>
+      <CartDrawer/>
     </Fragment>
   )
 }

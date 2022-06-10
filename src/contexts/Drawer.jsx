@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 const DrawerContext = createContext()
 DrawerContext.displayName = 'DrawerContext'
 
-export const useDrawer = ({children}) => useContext(DrawerContext)
+export const useDrawer = () => useContext(DrawerContext)
 
 const DrawerProvider = ({children}) => {
     const [open, setOpen] = useState(false)
@@ -31,3 +31,5 @@ const DrawerProvider = ({children}) => {
         </DrawerContext.Provider>
     )
 }
+
+export default DrawerProvider
