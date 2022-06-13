@@ -4,6 +4,7 @@ import React from 'react'
 import { useCart } from '../contexts/Cart'
 import { useDrawer } from '../contexts/Drawer'
 import { CartProduct } from './CartProduct'
+import { TotalSum } from './TotalSum'
 
 export const CartDrawer = () => {
     const { open, closeDrawer } = useDrawer()
@@ -54,6 +55,7 @@ export const CartDrawer = () => {
                     })
                 }
             </Box>
+            <TotalSum/>
         </Box>
     </Drawer>
 }

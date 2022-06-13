@@ -1,11 +1,11 @@
 import { DeleteOutline } from '@mui/icons-material'
-import { Box, Typography } from '@mui/material'
+import { Box, Button, ButtonGroup, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { useCart } from '../contexts/Cart'
 
 export const CartProduct = ({ product }) => {
     const [hover, setHover] = useState(false)
-    const { removeFromCart} = useCart()
+    const { removeFromCart, plusAmount, minusAmount} = useCart()
     return (
         <Box
             onMouseEnter={() => {
@@ -39,6 +39,11 @@ export const CartProduct = ({ product }) => {
                 }}>
                     ${product.price}
                 </Typography>
+                <ButtonGroup size='small'>
+                    <Button disabled={product.total === 1 ? true : false} onClick={() => minusAmount(product.id)}>-</Button>
+                    <Button>{product.total}</Button>
+                    <Button onClick={() => plusAmount(product.id)}>+</Button>   
+                </ButtonGroup>
             </Box>
             <Box sx={{
                 position: 'absolute',

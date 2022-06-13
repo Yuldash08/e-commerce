@@ -21,10 +21,12 @@ const DialogProvider = ({children}) => {
     }
 
     return(
-        <CartDialog.Provider value={
+        <CartDialog.Provider value={{
+
             openDialog,
             onOpenDialog,
             onCloseDialog,
+        }
         }>
             {children}
         </CartDialog.Provider>
