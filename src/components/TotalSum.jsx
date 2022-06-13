@@ -1,3 +1,4 @@
+import { Box } from '@mui/material'
 import React from 'react'
 import { useCart } from '../contexts/Cart'
 
@@ -8,8 +9,14 @@ export const TotalSum = () => {
         return p + sum
     }, 0)
     return (
-        <div>{
-            summ.toFixed(2)
-        }</div>
+        <Box sx={{
+            width: '100%',
+            textAlign: 'center',
+            padding: '5px',
+            background: theme => theme.palette.success.light,
+            color: '#fff' ,
+        }}>
+            Total: ${summ.toFixed(2)}
+        </Box>
     )
 }

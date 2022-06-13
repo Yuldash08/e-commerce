@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import query from '../services/api/api.service'
+import shuffle from "../utilities/shuffle";
 
 const AllProductsContext = createContext({isLoading: false, isError: false, products: []})
 AllProductsContext.displayName = 'AllProductsContext'
@@ -16,7 +17,7 @@ const AllProductsProvider = ({ children }) => {
     useEffect(() => {
         setAllProducts({ isLoading: true, isError: false, products: [] })
         query.getAllProducts()
-            .then(result => setAllProducts({ isLoading: false, products: result.data, isError: false }))
+            .then(result => setAllProducts({ isLoading: false, products: shuffle(result.data), isError: false }))
             .catch(err => setAllProducts({ isLoading: false, products: [], isError: true }))
     }, [])
     return (
