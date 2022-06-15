@@ -49,7 +49,7 @@ const CartProvider = ({ children }) => {
                 if (i.id === id) {
                     i.total += 1
                 }
-                return i
+                return i 
             })
         })
     }

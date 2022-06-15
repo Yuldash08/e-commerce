@@ -10,6 +10,7 @@ import ProductsByCategoryProvider from './contexts/ProductsByCategory';
 import ProductProvider from './contexts/Product';
 import CartProvider from './contexts/Cart';
 import DrawerProvider from './contexts/Drawer';
+import DialogProvider from './contexts/CartDialog';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,7 +22,9 @@ root.render(
             <ProductProvider>
               <CartProvider>
                 <DrawerProvider>
-                  <Routers />
+                  <DialogProvider>
+                    <Routers />
+                  </DialogProvider>
                 </DrawerProvider>
               </CartProvider>
             </ProductProvider>

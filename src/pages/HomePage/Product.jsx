@@ -5,11 +5,13 @@ import { SkeletonProduct } from '../../components/SkeletonProduct'
 import { useProduct } from '../../contexts/Product'
 import { LocalMallSharp, ShoppingCartRounded } from '@mui/icons-material';
 import { useCart } from '../../contexts/Cart'
+import { useDialog } from '../../contexts/CartDialog'
 
 export const Product = () => {
     const { product, getProductById } = useProduct()
     const { id } = useParams()
     const { addToCart} = useCart()
+    const { onOpenDialog } = useDialog()
 
     useEffect(() => {
         getProductById(id)
@@ -47,7 +49,7 @@ export const Product = () => {
                                 display: 'flex',
                                 gap: 2
                             }}>
-                                <Button variant='outlined' color='warning' startIcon={<LocalMallSharp />} size='large'>
+                                <Button onClick={onOpenDialog} variant='outlined' color='warning' startIcon={<LocalMallSharp />} size='large'>
                                     Buy Now
                                 </Button>
                                 <Button onClick={() => {

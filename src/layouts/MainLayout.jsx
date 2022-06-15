@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
+import { BuyDialog } from '../components/BuyDialog'
+import { Footer } from '../components/Footer'
 import Navbar from '../components/navbar'
 
 export const MainLayout = () => {
-        return (
+    return (
         <div>
-            <Navbar/>
-            <Outlet/>
+            <Navbar />
+            <Outlet />
+            <BuyDialog />
+            <Footer />
         </div>
     )
 }
